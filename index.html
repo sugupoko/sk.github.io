@@ -3,183 +3,211 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>あなたの名前 | ポートフォリオ</title>
-  <meta name="description" content="あなたの作品・スキル・略歴をまとめたポートフォリオサイト" />
-  <meta property="og:title" content="あなたの名前 | ポートフォリオ" />
-  <meta property="og:description" content="あなたの作品・スキル・略歴をまとめたポートフォリオサイト" />
+  <title>小林 秀 | ポートフォリオ</title>
+  <meta name="description" content="Kaggle実績・受賞・登壇、ソニーでの活動（カグル部）をまとめたポートフォリオ" />
+  <meta property="og:title" content="小林 秀 | ポートフォリオ" />
+  <meta property="og:description" content="Kaggle実績・受賞・登壇、ソニーでの活動（カグル部）をまとめたポートフォリオ" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.png" />
-  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="theme-color" content="#ffffff" />
   <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #0f172a;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --card: #111827;
-      --chip: #1f2937;
-      --link: #7dd3fc;
+    :root{
+      --bg:#fff; --text:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#0ea5e9; --link:#0369a1;
     }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --panel: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --accent: #0284c7;
-        --card: #ffffff;
-        --chip: #f1f5f9;
-        --link: #0369a1;
-      }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1220; --text:#e5e7eb; --muted:#94a3b8; --line:#1f2937; --accent:#38bdf8; --link:#7dd3fc; }
     }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;background:var(--bg);color:var(--text)}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.18), transparent 60%),
-                  radial-gradient(1200px 800px at 90% 10%, rgba(99,102,241,.16), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-    header { display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; margin-top: 24px; }
-    .avatar { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #6366f1); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 28px; }
-    .me h1 { margin: 0; font-size: clamp(26px, 4vw, 36px); letter-spacing: .3px; }
-    .me p { margin: 8px 0 0; color: var(--muted); }
-    nav { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .navlink { padding: 10px 14px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; border: 1px solid rgba(148,163,184,.18); }
-    .navlink:hover { outline: 2px solid rgba(125,211,252,.35); }
+    .wrap{max-width:1000px;margin:0 auto;padding:24px;display:grid;grid-template-columns:280px 1fr;gap:24px}
+    @media (max-width:900px){.wrap{grid-template-columns:1fr}}
 
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); margin-top: 28px; }
-    .card { background: linear-gradient(180deg, rgba(148,163,184,.06), transparent 40%), var(--card); border:1px solid rgba(148,163,184,.18); border-radius: 16px; padding: 18px; }
-    .col-span-4 { grid-column: span 4; }
-    .col-span-8 { grid-column: span 8; }
-    .col-span-12 { grid-column: span 12; }
-    @media (max-width: 900px) { .col-span-4, .col-span-8 { grid-column: span 12; } }
+    /* 左サイド */
+    aside{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-radius:12px;padding:20px}
+    .avatar{width:96px;height:96px;border-radius:50%;background:transparent;display:grid;place-items:center;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:contain}
+    .name{margin:14px 0 4px;font-size:22px}
+    .role{color:var(--muted);font-size:14px}
+    .list{list-style:none;padding:0;margin:14px 0 0}
+    .list li{padding:6px 0;color:var(--muted)}
+    .list b{color:var(--text)}
+    .links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .links a{display:grid;place-items:center;border:1px solid var(--line);border-radius:999px;width:40px;height:40px;padding:0}
+    .links a:hover{background:var(--line)}
+    .links svg{width:20px;height:20px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .toc{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+    .toc h4{margin:0 0 6px;font-size:13px;color:var(--muted)}
+    .toc ul{list-style:none;padding:0;margin:0}
+    .toc li{margin:2px 0}
+    .toc a{display:block;padding:6px 8px;border-radius:8px;color:var(--muted)}
+    .toc a:hover{background:var(--line)}
+    .toc a.active{color:var(--text);background:rgba(14,165,233,.12)}
+    html{scroll-behavior:smooth}
 
-    h2 { margin: 0 0 10px; font-size: 20px; letter-spacing:.2px; }
-    h3 { margin: 0 0 6px; font-size: 16px; }
-    p { margin: 8px 0; line-height: 1.65; }
-    ul { padding-left: 18px; margin: 8px 0; }
+    /* 右コンテンツ */
+    main{display:flex;flex-direction:column;gap:28px}
+    section{border:1px solid var(--line);border-radius:12px;padding:18px}
+    .sec-title{margin:0 0 10px;font-size:18px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0;padding-left:18px}
 
-    .tag { display: inline-flex; align-items:center; gap: 6px; padding: 6px 10px; margin: 6px 6px 0 0; border-radius: 999px; background: var(--chip); border:1px solid rgba(148,163,184,.18); font-size: 12px; color: var(--muted); }
-    .tag svg { width: 14px; height: 14px; }
+    /* セクション内の行見出し */
+    .item{margin:10px 0}
+    .item h3{margin:0 0 4px;font-size:16px}
+    .meta{font-size:12px;color:var(--muted)}
+    .sub-title{font-weight:600;margin:10px 0 4px}
+    .sub-block{margin:10px 0}
+    .kv{margin:10px 0}
+    .kv dt{font-weight:600;margin:8px 0 2px}
+    .kv dd{margin:0 0 10px 1rem;color:var(--muted)}
 
-    .projects { display: grid; gap: 12px; }
-    .project { display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 14px; border-radius: 12px; background: linear-gradient(180deg, rgba(148,163,184,.06), transparent 40%), var(--panel); border:1px solid rgba(148,163,184,.18); }
-    .project a { color: var(--link); text-decoration: none; }
-    .project a:hover { text-decoration: underline; }
-    .meta { color: var(--muted); font-size: 12px; }
-    .footer { margin: 32px 0 12px; text-align: center; color: var(--muted); font-size: 13px; }
-    .socials a { color: var(--text); text-decoration: none; margin-right: 10px; }
-    .socials a:hover { text-decoration: underline; }
-    .contact-btn { display:inline-block; margin-top: 10px; padding: 10px 14px; border-radius: 10px; background: var(--accent); color: #031525; font-weight: 700; text-decoration: none; }
+    footer{max-width:1000px;margin:24px auto 12px;text-align:center;color:var(--muted);font-size:13px}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="avatar" aria-label="アバター">YN</div>
-      <div class="me">
-        <h1>あなたの名前 <span style="font-weight:400;color:var(--muted);">/ Software Engineer</span></h1>
-        <p>自己紹介：関心領域・強み・現在取り組んでいることを2～3文で。ユーザー価値や成果で語るとGood。</p>
-        <nav>
-          <a class="navlink" href="#projects">作品</a>
-          <a class="navlink" href="#skills">スキル</a>
-          <a class="navlink" href="#about">略歴</a>
-          <a class="navlink" href="#contact">連絡先</a>
-        </nav>
+  <div class="wrap">
+    <aside>
+      <div class="avatar"><img src="./avatar.png" alt="小林 秀のアイコン" /></div>
+      <div class="name">小林 秀</div>
+      <div class="role">Kaggle Competitions Master</div>
+      <ul class="list">
+        <li><b>所在地:</b> 東京</li>
+        <li><b>関心:</b> 医療画像 / 画像・信号処理 / 人材育成</li>
+        <li><b>主な活動:</b> カグル部運営、登壇、執筆</li>
+      </ul>
+      <div class="links">
+        <a href="mailto:you@example.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+          </svg>
+          <span class="sr-only">Email</span>
+        </a>
+        <a href="https://github.com/yourname" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.74 1.27 3.41.97.11-.76.41-1.27.75-1.56-2.66-.3-5.46-1.33-5.46-5.91 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.31 1.23a11.5 11.5 0 0 1 6.02 0c2.3-1.55 3.31-1.23 3.31-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.59-2.8 5.61-5.47 5.91.42.36.8 1.07.8 2.16v3.2c0 .31.2.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://x.com/yourname" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H21l-7.5 9.03L22 21h-6.03l-4.7-5.68L5.9 21H2.43l7.93-9.56L2 3h6.1l4.24 5.1L17.53 3zM16.47 19h1.66L8.03 5H6.3l10.17 14z"/></svg>
+          <span class="sr-only">X</span>
+        </a>
+        <a href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3.5 9h3v12h-3zM10 9h2.9v1.7h.04c.4-.7 1.36-1.7 3-1.7 3.21 0 3.81 2.12 3.81 4.88V21h-3v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-3z"/></svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
       </div>
-    </header>
-
-    <section id="projects" class="grid">
-      <div class="col-span-12 card">
-        <h2>注目プロジェクト</h2>
-        <div class="projects">
-          <article class="project">
-            <div>
-              <h3><a href="https://github.com/yourname/awesome-app" target="_blank" rel="noopener">Awesome App</a></h3>
-              <p>課題 → 解決アプローチ → 結果（定量）。例：離脱率を20%改善、MAU 3万など。</p>
-              <div class="meta">技術: Next.js, Node.js, PostgreSQL・ 期間: 2024.05–2025.02 ・ 役割: 個人開発</div>
-            </div>
-            <div class="tag">⭐ 主要</div>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://your-demo-url.example" target="_blank" rel="noopener">Realtime Dashboard</a></h3>
-              <p>WebSocket でリアルタイム可視化。監視アラートの平均検知時間を40%短縮。</p>
-              <div class="meta">技術: Python(FastAPI), Redis, WebSocket</div>
-            </div>
-            <div class="tag">🧪 実証</div>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://github.com/yourname/ml-pipeline" target="_blank" rel="noopener">ML Pipeline</a></h3>
-              <p>MLOps 基盤。学習時間を1/3に短縮、再現性と自動評価を整備。</p>
-              <div class="meta">技術: PyTorch, DVC, GitHub Actions</div>
-            </div>
-            <div class="tag">🏗️ 基盤</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="grid">
-      <div class="col-span-8 card">
-        <h2>スキル</h2>
-        <div>
-          <span class="tag">TypeScript</span>
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Python</span>
-          <span class="tag">Go</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Docker</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">CI/CD</span>
-        </div>
-      </div>
-      <div class="col-span-4 card">
-        <h2>実績・受賞</h2>
+      <nav class="toc" aria-label="目次">
+        <h4>目次</h4>
         <ul>
-          <li>◯◯カンファレンス 登壇（2025）</li>
-          <li>社内アワード 受賞（2024）</li>
-          <li>技術記事 累計10万PV</li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#work">Work Experience</a></li>
+          <li><a href="#awards">受賞・メディア・登壇</a></li>
+          <li><a href="#achievements">Kaggle / コンペ実績</a></li>
+          <li><a href="#career">経歴</a></li>
         </ul>
-      </div>
-    </section>
+      </nav>
+    </aside>
 
-    <section id="about" class="grid">
-      <div class="col-span-12 card">
-        <h2>略歴</h2>
+    <main>
+      <section id="about">
+        <h2 class="sec-title">About me</h2>
+        <p class="muted">Kaggle Master（世界ランク最高53位/約20万人）。AIコンペ継続参加で上位入賞を重ね、実務では人材育成や社内コミュニティ運営（カグル部）を通じて技術浸透を推進しています。</p>
+      </section>
+
+      
+      <section id="work">
+        <h2 class="sec-title">Work Experience</h2>
+        <div class="item">
+          <h3>Sony Corporation — Machine Learning Engineer</h3>
+          <div class="meta">2021 – Present · Tokyo</div>
+          <dl class="kv">
+            <dt>開発テーマ（概要）</dt>
+            <dd>画像・信号処理領域の深層学習（例：医療画像、EEG、画像マッチング等）。社外公開情報に限る形で紹介しています。</dd>
+            <dt>カグル部 立ち上げ・運営</dt>
+            <dd>グループ横断の社内コミュニティを立ち上げ、参加者151名規模に成長。Kaggle Masterは3名→9名へ増加。社内外イベント連携・スポンサーを通じ、知見共有と人材育成を加速。</dd>
+            <dt>AI人材育成（AI道場）</dt>
+            <dd>AIコンペを活用した育成プログラムを企画・実行し、のべ30名以上を育成。業務効率化の実案件へ応用。</dd>
+          </dl>
+        </div>
+        <div class="item">
+          <h3>Sony Semiconductor Solutions — Embedded / AI / App Engineer</h3>
+          <div class="meta">2017 – 2021 · Japan</div>
+          <dl class="kv">
+            <dt>担当領域</dt>
+            <dd>組み込みソフトウェア開発、AI開発、アプリケーション開発。</dd>
+          </dl>
+        </div>
+      </section>
+
+      
+      <section id="awards">
+        <h2 class="sec-title">受賞・メディア・登壇</h2>
         <ul>
-          <li>2023–現在：株式会社◯◯ / フロントエンドエンジニア</li>
-          <li>2021–2023：△△株式会社 / サーバーサイドエンジニア</li>
-          <li>2017–2021：□□大学 情報系 学士</li>
+          <li>書籍インタビュー掲載：<a href="https://www.shoeisha.co.jp/book/detail/9784798187457" target="_blank" rel="noopener">現場のプロが本気で教える Kaggle 10アプローチ</a></li>
+          <li>名古屋大学 DEC Integrity イベント 登壇：<a href="https://dec.nagoya-u.ac.jp/integrity/16003.html" target="_blank" rel="noopener">イベントページ</a></li>
+          <li>映像情報メディア学会 鈴木記念奨励賞（2017）</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="grid">
-      <div class="col-span-12 card">
-        <h2>連絡先</h2>
-        <p class="socials">
-          <a href="mailto:you@example.com">you@example.com</a>
-          · <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
-          · <a href="https://x.com/yourname" target="_blank" rel="noopener">X (Twitter)</a>
-          · <a href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
-        <a class="contact-btn" href="mailto:you@example.com">仕事の相談をする</a>
-      </div>
-    </section>
+      
+      <section id="achievements">
+        <h2 class="sec-title">Kaggle / コンペ実績</h2>
+        <div class="item">
+          <h3>HMS - Harmful Brain Activity Classification</h3>
+          <div class="meta">2024年5月 / 1位（全2867チーム中）</div>
+        </div>
+        <div class="item">
+          <h3>RSNA 2024 Lumbar Spine Degenerative Classification</h3>
+          <div class="meta">2024年11月 / 3位（全1874チーム中）</div>
+        </div>
+        <div class="item">
+          <h3>HuBMAP - Hacking the Human Vasculature</h3>
+          <div class="meta">2023年7月 / 10位（全1024チーム中）</div>
+        </div>
+        <div class="item">
+          <h3>Image Matching Challenge 2025 (CVPR Workshop)</h3>
+          <div class="meta">2025年6月 / 10位（全943チーム中）</div>
+        </div>
+        <p class="muted">Kaggle Competitions Master（上位入賞4回、賞金累計約100万円）。</p>
+      </section>
 
-    <p class="footer">© <span id="year"></span> あなたの名前. All rights reserved.</p>
+      
+
+
+      <section id="career">
+        <h2 class="sec-title">経歴</h2>
+        <ul>
+          <li>ソニー株式会社（2021–現在） — 機械学習エンジニア / 人材育成・コミュニティ運営</li>
+          <li>ソニーセミコンダクタソリューションズ株式会社（2017–2021） — 組み込み/AI/アプリ開発</li>
+          <li>東京理科大学大学院 工学研究科 電気工学専攻 修士課程 修了（2017）</li>
+        </ul>
+      </section>
+
+    </main>
   </div>
+
+  <footer>© <span id="year"></span> 小林 秀. All rights reserved.</footer>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Scrollspy for table of contents
+  const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+  const sections = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: '0px 0px -70% 0px', threshold: 0.2 });
+    sections.forEach(sec => obs.observe(sec));
+  }
+</script>
 </body>
 </html>
