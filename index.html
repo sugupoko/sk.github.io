@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>あなたの名前 | ポートフォリオ</title>
+  <meta name="description" content="あなたの作品・スキル・略歴をまとめたポートフォリオサイト" />
+  <meta property="og:title" content="あなたの名前 | ポートフォリオ" />
+  <meta property="og:description" content="あなたの作品・スキル・略歴をまとめたポートフォリオサイト" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --card: #111827;
+      --chip: #1f2937;
+      --link: #7dd3fc;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #0284c7;
+        --card: #ffffff;
+        --chip: #f1f5f9;
+        --link: #0369a1;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(56,189,248,.18), transparent 60%),
+                  radial-gradient(1200px 800px at 90% 10%, rgba(99,102,241,.16), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: center; margin-top: 24px; }
+    .avatar { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #6366f1); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 28px; }
+    .me h1 { margin: 0; font-size: clamp(26px, 4vw, 36px); letter-spacing: .3px; }
+    .me p { margin: 8px 0 0; color: var(--muted); }
+    nav { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .navlink { padding: 10px 14px; border-radius: 999px; background: var(--chip); color: var(--text); text-decoration: none; border: 1px solid rgba(148,163,184,.18); }
+    .navlink:hover { outline: 2px solid rgba(125,211,252,.35); }
+
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); margin-top: 28px; }
+    .card { background: linear-gradient(180deg, rgba(148,163,184,.06), transparent 40%), var(--card); border:1px solid rgba(148,163,184,.18); border-radius: 16px; padding: 18px; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-8 { grid-column: span 8; }
+    .col-span-12 { grid-column: span 12; }
+    @media (max-width: 900px) { .col-span-4, .col-span-8 { grid-column: span 12; } }
+
+    h2 { margin: 0 0 10px; font-size: 20px; letter-spacing:.2px; }
+    h3 { margin: 0 0 6px; font-size: 16px; }
+    p { margin: 8px 0; line-height: 1.65; }
+    ul { padding-left: 18px; margin: 8px 0; }
+
+    .tag { display: inline-flex; align-items:center; gap: 6px; padding: 6px 10px; margin: 6px 6px 0 0; border-radius: 999px; background: var(--chip); border:1px solid rgba(148,163,184,.18); font-size: 12px; color: var(--muted); }
+    .tag svg { width: 14px; height: 14px; }
+
+    .projects { display: grid; gap: 12px; }
+    .project { display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 14px; border-radius: 12px; background: linear-gradient(180deg, rgba(148,163,184,.06), transparent 40%), var(--panel); border:1px solid rgba(148,163,184,.18); }
+    .project a { color: var(--link); text-decoration: none; }
+    .project a:hover { text-decoration: underline; }
+    .meta { color: var(--muted); font-size: 12px; }
+    .footer { margin: 32px 0 12px; text-align: center; color: var(--muted); font-size: 13px; }
+    .socials a { color: var(--text); text-decoration: none; margin-right: 10px; }
+    .socials a:hover { text-decoration: underline; }
+    .contact-btn { display:inline-block; margin-top: 10px; padding: 10px 14px; border-radius: 10px; background: var(--accent); color: #031525; font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar" aria-label="アバター">YN</div>
+      <div class="me">
+        <h1>あなたの名前 <span style="font-weight:400;color:var(--muted);">/ Software Engineer</span></h1>
+        <p>自己紹介：関心領域・強み・現在取り組んでいることを2～3文で。ユーザー価値や成果で語るとGood。</p>
+        <nav>
+          <a class="navlink" href="#projects">作品</a>
+          <a class="navlink" href="#skills">スキル</a>
+          <a class="navlink" href="#about">略歴</a>
+          <a class="navlink" href="#contact">連絡先</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="projects" class="grid">
+      <div class="col-span-12 card">
+        <h2>注目プロジェクト</h2>
+        <div class="projects">
+          <article class="project">
+            <div>
+              <h3><a href="https://github.com/yourname/awesome-app" target="_blank" rel="noopener">Awesome App</a></h3>
+              <p>課題 → 解決アプローチ → 結果（定量）。例：離脱率を20%改善、MAU 3万など。</p>
+              <div class="meta">技術: Next.js, Node.js, PostgreSQL・ 期間: 2024.05–2025.02 ・ 役割: 個人開発</div>
+            </div>
+            <div class="tag">⭐ 主要</div>
+          </article>
+          <article class="project">
+            <div>
+              <h3><a href="https://your-demo-url.example" target="_blank" rel="noopener">Realtime Dashboard</a></h3>
+              <p>WebSocket でリアルタイム可視化。監視アラートの平均検知時間を40%短縮。</p>
+              <div class="meta">技術: Python(FastAPI), Redis, WebSocket</div>
+            </div>
+            <div class="tag">🧪 実証</div>
+          </article>
+          <article class="project">
+            <div>
+              <h3><a href="https://github.com/yourname/ml-pipeline" target="_blank" rel="noopener">ML Pipeline</a></h3>
+              <p>MLOps 基盤。学習時間を1/3に短縮、再現性と自動評価を整備。</p>
+              <div class="meta">技術: PyTorch, DVC, GitHub Actions</div>
+            </div>
+            <div class="tag">🏗️ 基盤</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="grid">
+      <div class="col-span-8 card">
+        <h2>スキル</h2>
+        <div>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">Go</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="col-span-4 card">
+        <h2>実績・受賞</h2>
+        <ul>
+          <li>◯◯カンファレンス 登壇（2025）</li>
+          <li>社内アワード 受賞（2024）</li>
+          <li>技術記事 累計10万PV</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="grid">
+      <div class="col-span-12 card">
+        <h2>略歴</h2>
+        <ul>
+          <li>2023–現在：株式会社◯◯ / フロントエンドエンジニア</li>
+          <li>2021–2023：△△株式会社 / サーバーサイドエンジニア</li>
+          <li>2017–2021：□□大学 情報系 学士</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="grid">
+      <div class="col-span-12 card">
+        <h2>連絡先</h2>
+        <p class="socials">
+          <a href="mailto:you@example.com">you@example.com</a>
+          · <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+          · <a href="https://x.com/yourname" target="_blank" rel="noopener">X (Twitter)</a>
+          · <a href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+        <a class="contact-btn" href="mailto:you@example.com">仕事の相談をする</a>
+      </div>
+    </section>
+
+    <p class="footer">© <span id="year"></span> あなたの名前. All rights reserved.</p>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
