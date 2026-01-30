@@ -26,14 +26,14 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    .wrap{max-width:1000px;margin:0 auto;padding:24px;display:grid;grid-template-columns:280px 1fr;gap:24px}
-    @media (max-width:900px){
-      .wrap{grid-template-columns:1fr}
-      aside{position:static}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px;display:grid;grid-template-columns:1fr;gap:24px}
+    @media (min-width:1000px){
+      .wrap{grid-template-columns:280px 1fr}
+      aside{position:sticky;top:24px}
     }
 
     /* 左サイド */
-    aside{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-radius:12px;padding:20px}
+    aside{align-self:start;border:1px solid var(--line);border-radius:12px;padding:20px}
     .avatar{width:var(--avatar-size);height:var(--avatar-size);border-radius:50%;background:transparent;display:grid;place-items:center;overflow:hidden;border:var(--avatar-ring) solid var(--accent)}
     .avatar.--sm{--avatar-size:72px}
     .avatar.--md{--avatar-size:96px}
@@ -179,6 +179,7 @@
       <section id="awards">
         <h2 class="sec-title">受賞・メディア・登壇</h2>
         <ul>
+          <li>2026 : 第55回日本神経放射線学会 シンポジウム4「インフォマティクス」登壇（SY4-1「Kaggleで学ぶAI技術と医療AIの現場実装に向けて」）: <a href="https://cs-oto3.com/jsnr55/program.html" target="_blank" rel="noopener">プログラム</a></li>
           <li>2025 : 書籍インタビュー掲載 : <br><a href="https://www.shoeisha.co.jp/book/detail/9784798187457" target="_blank" rel="noopener">　目指せメダリスト！Kaggle実験管理術 着実にコンペで成果を出すためのノウハウ</a></li>
           <li>2025 : 名古屋大学 DEC Integrity イベント 登壇 : <a href="https://dec.nagoya-u.ac.jp/integrity/16003.html" target="_blank" rel="noopener">イベントページ</a></li>
           <li>2024 : Sony Discover Sony kaggle master インタビュー : <a href="https://www.sony.com/ja/SonyInfo/DiscoverSony/articles/202412/KaggleMaster/" target="_blank" rel="noopener">記事</a></li>
