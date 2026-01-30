@@ -71,9 +71,8 @@
     .kv{margin:10px 0}
     .kv dt{font-weight:600;margin:8px 0 2px}
     .kv dd{margin:0 0 10px 1rem;color:var(--muted)}
-    .muted {
-      color: white; /* テキストを白に */
-    }
+    /* Ensure muted text is readable on light backgrounds */
+    .muted{color:var(--muted)}
     footer{max-width:1000px;margin:24px auto 12px;text-align:center;color:var(--muted);font-size:13px}
   </style>
 </head>
