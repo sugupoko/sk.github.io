@@ -27,7 +27,10 @@
     a:hover{text-decoration:underline}
 
     .wrap{max-width:1000px;margin:0 auto;padding:24px;display:grid;grid-template-columns:280px 1fr;gap:24px}
-    @media (max-width:900px){.wrap{grid-template-columns:1fr}}
+    @media (max-width:900px){
+      .wrap{grid-template-columns:1fr}
+      aside{position:static}
+    }
 
     /* 左サイド */
     aside{position:sticky;top:24px;align-self:start;border:1px solid var(--line);border-radius:12px;padding:20px}
