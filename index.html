@@ -4,12 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Suguru Kobayashi | ポートフォリオ</title>
-  <meta name="description" content="まとめたポートフォリオ" />
+  <link rel="canonical" href="https://sugupoko.github.io/sk.github.io/" />
+  <meta name="description" content="Kaggle Competitions Master（金メダル4枚・世界最高53位）。画像認識・信号処理・医療AIのモデル開発と、AI人材育成・業務改革を手がける小林秀（Suguru Kobayashi）のポートフォリオ。" />
   <meta property="og:title" content="Suguru Kobayashi | ポートフォリオ" />
-  <meta property="og:description" content="まとめたポートフォリオ" />
+  <meta property="og:description" content="Kaggle Master（金4枚・世界最高53位）。画像認識・信号処理・医療AIのモデル開発と、AI人材育成・業務改革。" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.png" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:url" content="https://sugupoko.github.io/sk.github.io/" />
+  <meta property="og:image" content="https://sugupoko.github.io/sk.github.io/avatar.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@sugupoko" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <style>
     :root{
       --bg:#fff; --text:#111827; --muted:#4b5563; --line:#e5e7eb; --accent:#0ea5e9; --link:#0369a1;
@@ -78,7 +83,59 @@
     /* Ensure muted text is readable on light backgrounds */
     .muted{color:var(--muted)}
     footer{max-width:1000px;margin:24px auto 12px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Kaggle ハイライト数値カード */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:18px 0 6px}
+    .stat{border:1px solid var(--line);border-radius:12px;padding:14px 10px;text-align:center;background:rgba(14,165,233,.06)}
+    .stat .num{font-size:22px;font-weight:800;line-height:1.1;color:var(--text)}
+    .stat .unit{font-size:14px;font-weight:600}
+    .stat .label{font-size:12px;color:var(--muted);margin-top:4px}
+
+    /* Skills */
+    .skill-row{margin:12px 0}
+    .skill-row .cat{font-weight:600;font-size:14px;margin-bottom:6px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 11px;color:var(--muted);background:rgba(14,165,233,.06)}
+
+    /* コンペ実績バッジ */
+    .ach-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .ach-head h3{margin:0}
+    .rank-badge{white-space:nowrap;font-weight:700;font-size:13px;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--text)}
+    .rank-gold{background:rgba(234,179,8,.16);border-color:rgba(234,179,8,.5)}
+    .rank-bronze{background:rgba(180,120,60,.18);border-color:rgba(180,120,60,.5)}
+    .rank-top{background:rgba(14,165,233,.12);border-color:rgba(14,165,233,.4)}
+
+    /* Contact */
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:9px 14px;color:var(--text)}
+    .btn:hover{background:var(--line);text-decoration:none}
+
+    /* section hover polish */
+    section{transition:border-color .2s ease, box-shadow .2s ease}
+    section:hover{box-shadow:0 1px 4px rgba(0,0,0,.06)}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suguru Kobayashi",
+    "alternateName": "小林 秀",
+    "jobTitle": "Machine Learning Engineer / Kaggle Competitions Master",
+    "worksFor": { "@type": "Organization", "name": "株式会社ビー・エム・エル" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "東京理科大学大学院" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Tokyo", "addressCountry": "JP" },
+    "url": "https://sugupoko.github.io/sk.github.io/",
+    "image": "https://sugupoko.github.io/sk.github.io/avatar.png",
+    "sameAs": [
+      "https://github.com/sugupoko",
+      "https://x.com/sugupoko",
+      "https://www.kaggle.com/sugupoko",
+      "https://www.linkedin.com/in/suguru-kobayashi-09a4a418a/",
+      "https://speakerdeck.com/sugupoko",
+      "https://zenn.dev/sugupoko"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -115,11 +172,13 @@
         <h4>目次</h4>
         <ul>
           <li><a href="#about">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#work">Work Experience</a></li>
           <li><a href="#awards">受賞・メディア・登壇</a></li>
           <li><a href="#achievements">コンペ上位実績</a></li>
           <li><a href="#papers">Papers</a></li>
-          <li><a href="#career">経歴</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </aside>
@@ -127,10 +186,38 @@
     <main>
       <section id="about">
         <h2 class="sec-title">About me</h2>
-        <p class="muted">AIモデル開発、データ分析エンジニア<br>
-          Kaggle Master（金4枚、世界ランク最高53位/約20万人、賞金累計420万円(チーム)）<br><br>
-          ソニー在籍中にAIコンペ継続参加で上位入賞を重ね、<br>技術開発に加えて、人材育成や社内コミュニティ運営（カグル部）を通じた技術浸透を推進。<br><br>
-          現在は株式会社ビー・エム・エルにて、AI活用の有無を問わず複数部門の業務改革を推進</p>
+        <div class="stats">
+          <div class="stat"><div class="num">🥇 ×4</div><div class="label">Kaggle 金メダル</div></div>
+          <div class="stat"><div class="num">53<span class="unit">位</span></div><div class="label">世界最高ランク / 約20万人</div></div>
+          <div class="stat"><div class="num">420<span class="unit">万円</span></div><div class="label">賞金累計（チーム）</div></div>
+        </div>
+        <p class="muted">画像認識・信号処理を軸にしたAIモデル開発／データ分析エンジニア。<br><br>
+          ソニー在籍中にAIコンペへ継続参加し上位入賞を重ね、技術開発に加えて、人材育成や社内コミュニティ運営（カグル部）を通じた技術浸透を推進。<br><br>
+          現在は株式会社ビー・エム・エルにて、AI活用の有無を問わず複数部門の業務改革を推進。</p>
+      </section>
+
+      <section id="skills">
+        <h2 class="sec-title">Skills</h2>
+        <div class="skill-row">
+          <div class="cat">言語</div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">C / C++</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="cat">機械学習 / ディープラーニング</div>
+          <div class="tags"><span class="tag">PyTorch</span><span class="tag">画像認識 (Computer Vision)</span><span class="tag">セグメンテーション</span><span class="tag">信号処理 (EEG 等)</span><span class="tag">医療AI</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="cat">MLOps / 開発プロセス</div>
+          <div class="tags"><span class="tag">実験管理</span><span class="tag">PoC設計</span><span class="tag">MLOps・運用設計</span><span class="tag">データ分析</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="cat">組み込み / 低レイヤ</div>
+          <div class="tags"><span class="tag">RTOS 移植</span><span class="tag">ドライバ開発</span><span class="tag">システムLSI</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="cat">その他</div>
+          <div class="tags"><span class="tag">Kaggle</span><span class="tag">AI人材育成</span><span class="tag">社内コミュニティ運営</span></div>
+        </div>
       </section>
 
       
@@ -192,30 +279,38 @@
       
       <section id="achievements">
         <h2 class="sec-title">コンペ上位実績</h2>
-        <div class="item">
-          <h3>kaggle HMS - Harmful Brain Activity Classification</h3>
+        <div class="item ach">
+          <div class="ach-head">
+            <h3>kaggle HMS - Harmful Brain Activity Classification</h3>
+            <span class="rank-badge rank-gold">🥇 1位 / 2867</span>
+          </div>
           <div class="meta">脳波（EEG）から有害な脳活動を分類するタスク</div>
-          <div class="meta">2024年5月 / 1位（全2867チーム中）</div>
-          <div class="meta"><a href="https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification" target="_blank" rel="noopener">コンペページ</a></div>
+          <div class="meta">2024年5月 · 全2867チーム中 · <a href="https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification" target="_blank" rel="noopener">コンペページ</a></div>
         </div>
-        <div class="item">
-          <h3>kaggle RSNA 2024 Lumbar Spine Degenerative Classification</h3>
+        <div class="item ach">
+          <div class="ach-head">
+            <h3>kaggle RSNA 2024 Lumbar Spine Degenerative Classification</h3>
+            <span class="rank-badge rank-bronze">🥉 3位 / 1874</span>
+          </div>
           <div class="meta">腰椎MRIから脊椎の変性疾患を分類するタスク</div>
-          <div class="meta">2024年11月 / 3位（全1874チーム中）</div>
-          <div class="meta">加えて、ソースコードが教育功労賞受賞</div>
-          <div class="meta"><a href="https://www.kaggle.com/competitions/rsna-2024-lumbar-spine-degenerative-classification" target="_blank" rel="noopener">コンペページ</a></div>
+          <div class="meta">加えて、ソースコードが教育功労賞を受賞</div>
+          <div class="meta">2024年11月 · 全1874チーム中 · <a href="https://www.kaggle.com/competitions/rsna-2024-lumbar-spine-degenerative-classification" target="_blank" rel="noopener">コンペページ</a></div>
         </div>
-        <div class="item">
-          <h3>kaggle HuBMAP - Hacking the Human Vasculature</h3>
+        <div class="item ach">
+          <div class="ach-head">
+            <h3>kaggle HuBMAP - Hacking the Human Vasculature</h3>
+            <span class="rank-badge rank-top">🏅 10位 / 1024</span>
+          </div>
           <div class="meta">腎臓組織の顕微鏡画像から微小血管をセグメンテーションするタスク</div>
-          <div class="meta">2023年7月 / 10位（全1024チーム中）</div>
-          <div class="meta"><a href="https://www.kaggle.com/competitions/hubmap-hacking-the-human-vasculature" target="_blank" rel="noopener">コンペページ</a></div>
+          <div class="meta">2023年7月 · 全1024チーム中 · <a href="https://www.kaggle.com/competitions/hubmap-hacking-the-human-vasculature" target="_blank" rel="noopener">コンペページ</a></div>
         </div>
-        <div class="item">
-          <h3>kaggle Image Matching Challenge 2025 (CVPR Workshop)</h3>
+        <div class="item ach">
+          <div class="ach-head">
+            <h3>kaggle Image Matching Challenge 2025 (CVPR Workshop)</h3>
+            <span class="rank-badge rank-top">🏅 10位 / 943</span>
+          </div>
           <div class="meta">複数の画像から3Dシーンを復元する画像マッチングタスク</div>
-          <div class="meta">2025年6月 / 10位（全943チーム中）</div>
-          <div class="meta"><a href="https://www.kaggle.com/competitions/image-matching-challenge-2025" target="_blank" rel="noopener">コンペページ</a></div>
+          <div class="meta">2025年6月 · 全943チーム中 · <a href="https://www.kaggle.com/competitions/image-matching-challenge-2025" target="_blank" rel="noopener">コンペページ</a></div>
         </div>
       </section>
 
@@ -238,14 +333,26 @@
       </section>     
 
 
-      <section id="career">
-        <h2 class="sec-title">経歴</h2>
+      <section id="education">
+        <h2 class="sec-title">Education</h2>
         <ul>
-          <li>株式会社ビー・エム・エル（2025–現在）</li>
-          <li>ソニー株式会社（2021–2025）</li>
-          <li>ソニーセミコンダクタソリューションズ株式会社（2017–2021）</li>
           <li>東京理科大学大学院 工学研究科 電気工学専攻 修士課程 修了（2017）</li>
         </ul>
+      </section>
+
+      <section id="contact">
+        <h2 class="sec-title">Contact</h2>
+        <p class="muted">お仕事・登壇・取材などのご相談は、以下からお気軽にどうぞ。</p>
+        <div class="btns">
+          <a class="btn" href="https://www.linkedin.com/in/suguru-kobayashi-09a4a418a/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3.5 9h3v12h-3zM10 9h2.9v1.7h.04c.4-.7 1.36-1.7 3-1.7 3.21 0 3.81 2.12 3.81 4.88V21h-3v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-3z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://x.com/sugupoko" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.53 3H21l-7.5 9.03L22 21h-6.03l-4.7-5.68L5.9 21H2.43l7.93-9.56L2 3h6.1l4.24 5.1L17.53 3zM16.47 19h1.66L8.03 5H6.3l10.17 14z"/></svg>
+            X (Twitter)
+          </a>
+        </div>
       </section>
 
     </main>
