@@ -113,6 +113,9 @@
     /* section hover polish */
     section{transition:border-color .2s ease, box-shadow .2s ease}
     section:hover{box-shadow:0 1px 4px rgba(0,0,0,.06)}
+
+    /* Work Experience: 会社名の頭にアクセントマーカー */
+    #work .item h3::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--accent);margin-right:9px;vertical-align:middle}
   </style>
   <script type="application/ld+json">
   {
